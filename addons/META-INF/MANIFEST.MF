@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Specification-Title: modernfix
+Operative-Class: org.embeddedt.modernfix.agent.Agent
+Specification-Version: 1
+Implementation-Title: forge
+Implementation-Version: 5.18.0+mc1.18.2
+MixinConfigs: modernfix-common.mixins.json,modernfix-forge.mixins.json
+

@@ -1,0 +1,524 @@
+{
+  "mappings": {
+    "org/embeddedt/modernfix/common/mixin/bugfix/buffer_builder_leak/BufferBuilderMixin": {
+      "<clinit>": "Lcom/mojang/blaze3d/vertex/BufferBuilder;<clinit>()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/bugfix/chunk_deadlock/BlockStateBaseMixin": {
+      "getOffset": "Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase;m_60824_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/phys/Vec3;"
+    },
+    "org/embeddedt/modernfix/common/mixin/bugfix/ender_dragon_leak/EnderDragonRendererMixin": {
+      "render(Lnet/minecraft/world/entity/boss/enderdragon/EnderDragon;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V": "Lnet/minecraft/client/renderer/entity/EnderDragonRenderer;m_7392_(Lnet/minecraft/world/entity/boss/enderdragon/EnderDragon;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/bugfix/item_cache_flag/ItemStackMixin": {
+      "Lnet/minecraft/world/item/ItemStack;emptyCacheFlag:Z": "Lnet/minecraft/world/item/ItemStack;f_41591_:Z",
+      "Lnet/minecraft/world/item/ItemStack;getItem()Lnet/minecraft/world/item/Item;": "Lnet/minecraft/world/item/ItemStack;m_41720_()Lnet/minecraft/world/item/Item;",
+      "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z": "Lnet/minecraft/world/item/ItemStack;m_150930_(Lnet/minecraft/world/item/Item;)Z",
+      "isEmpty": "Lnet/minecraft/world/item/ItemStack;m_41619_()Z"
+    },
+    "org/embeddedt/modernfix/common/mixin/bugfix/paper_chunk_patches/ChunkMapMixin": {
+      "prepareAccessibleChunk": "Lnet/minecraft/server/level/ChunkMap;m_143109_(Lnet/minecraft/server/level/ChunkHolder;)Ljava/util/concurrent/CompletableFuture;",
+      "schedule": "Lnet/minecraft/server/level/ChunkMap;m_140292_(Lnet/minecraft/server/level/ChunkHolder;Lnet/minecraft/world/level/chunk/ChunkStatus;)Ljava/util/concurrent/CompletableFuture;"
+    },
+    "org/embeddedt/modernfix/common/mixin/bugfix/restore_old_dragon_movement/EnderDragonMixin": {
+      "Lnet/minecraft/world/entity/boss/enderdragon/phases/DragonPhaseInstance;getFlyTargetLocation()Lnet/minecraft/world/phys/Vec3;": "Lnet/minecraft/world/entity/boss/enderdragon/phases/DragonPhaseInstance;m_5535_()Lnet/minecraft/world/phys/Vec3;",
+      "Lnet/minecraft/world/phys/Vec3;add(DDD)Lnet/minecraft/world/phys/Vec3;": "Lnet/minecraft/world/phys/Vec3;m_82520_(DDD)Lnet/minecraft/world/phys/Vec3;",
+      "aiStep": "Lnet/minecraft/world/entity/boss/enderdragon/EnderDragon;m_8107_()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/bugfix/world_leaks/MinecraftMixin": {
+      "Lnet/minecraft/client/Minecraft;level:Lnet/minecraft/client/multiplayer/ClientLevel;": "Lnet/minecraft/client/Minecraft;f_91073_:Lnet/minecraft/client/multiplayer/ClientLevel;",
+      "clearLevel(Lnet/minecraft/client/gui/screens/Screen;)V": "Lnet/minecraft/client/Minecraft;m_91320_(Lnet/minecraft/client/gui/screens/Screen;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/core/MinecraftServerMixin": {
+      "Lnet/minecraft/server/MinecraftServer;tickServer(Ljava/util/function/BooleanSupplier;)V": "Lnet/minecraft/server/MinecraftServer;m_5705_(Ljava/util/function/BooleanSupplier;)V",
+      "runServer": "Lnet/minecraft/server/MinecraftServer;m_130011_()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/core/SynchedEntityDataMixin": {
+      "<init>": "Lnet/minecraft/network/syncher/SynchedEntityData;<init>(Lnet/minecraft/world/entity/Entity;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/devenv/NarratorMixin": {
+      "<init>": "Lnet/minecraft/client/gui/chat/NarratorChatListener;<init>()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/feature/direct_stack_trace/CrashReportMixin": {
+      "addCategory(Ljava/lang/String;I)Lnet/minecraft/CrashReportCategory;": "Lnet/minecraft/CrashReport;m_127516_(Ljava/lang/String;I)Lnet/minecraft/CrashReportCategory;"
+    },
+    "org/embeddedt/modernfix/common/mixin/feature/measure_time/BootstrapMixin": {
+      "Lnet/minecraft/server/Bootstrap;isBootstrapped:Z": "Lnet/minecraft/server/Bootstrap;f_135867_:Z",
+      "bootStrap": "Lnet/minecraft/server/Bootstrap;m_135870_()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/feature/measure_time/ConnectScreenMixin": {
+      "connect": "Lnet/minecraft/client/gui/screens/ConnectScreen;m_169264_(Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/multiplayer/resolver/ServerAddress;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/feature/measure_time/MinecraftMixin": {
+      "makeWorldStem(Lnet/minecraft/server/packs/repository/PackRepository;ZLnet/minecraft/server/WorldStem$DataPackConfigSupplier;Lnet/minecraft/server/WorldStem$WorldDataSupplier;)Lnet/minecraft/server/WorldStem;": "Lnet/minecraft/client/Minecraft;m_205125_(Lnet/minecraft/server/packs/repository/PackRepository;ZLnet/minecraft/server/WorldStem$DataPackConfigSupplier;Lnet/minecraft/server/WorldStem$WorldDataSupplier;)Lnet/minecraft/server/WorldStem;",
+      "tick": "Lnet/minecraft/client/Minecraft;m_91398_()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/feature/measure_time/ProfiledReloadInstanceMixin": {
+      "<init>": "Lnet/minecraft/server/packs/resources/ProfiledReloadInstance;<init>(Lnet/minecraft/server/packs/resources/ResourceManager;Ljava/util/List;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/CompletableFuture;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/feature/measure_time/SimpleReloadableResourceManagerMixin": {
+      "Lnet/minecraft/server/packs/resources/SimpleReloadInstance;create(Lnet/minecraft/server/packs/resources/ResourceManager;Ljava/util/List;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/CompletableFuture;Z)Lnet/minecraft/server/packs/resources/ReloadInstance;": "Lnet/minecraft/server/packs/resources/SimpleReloadInstance;m_203834_(Lnet/minecraft/server/packs/resources/ResourceManager;Ljava/util/List;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/CompletableFuture;Z)Lnet/minecraft/server/packs/resources/ReloadInstance;",
+      "createReload": "Lnet/minecraft/server/packs/resources/ReloadableResourceManager;m_142463_(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/CompletableFuture;Ljava/util/List;)Lnet/minecraft/server/packs/resources/ReloadInstance;"
+    },
+    "org/embeddedt/modernfix/common/mixin/feature/stalled_chunk_load_detection/ServerChunkCacheMixin": {
+      "getChunk": "Lnet/minecraft/server/level/ServerChunkCache;m_7587_(IILnet/minecraft/world/level/chunk/ChunkStatus;Z)Lnet/minecraft/world/level/chunk/ChunkAccess;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/blast_search_trees/MinecraftMixin": {
+      "createSearchTrees": "Lnet/minecraft/client/Minecraft;m_91271_()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/cache_blockstate_cache_arrays/AbstractBlockStateCacheMixin": {
+      "<init>(Lnet/minecraft/world/level/block/state/BlockState;)V": "Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase$Cache;<init>(Lnet/minecraft/world/level/block/state/BlockState;)V",
+      "Lnet/minecraft/core/Direction$Axis;values()[Lnet/minecraft/core/Direction$Axis;": "Lnet/minecraft/core/Direction$Axis;values()[Lnet/minecraft/core/Direction$Axis;",
+      "Lnet/minecraft/world/level/block/SupportType;values()[Lnet/minecraft/world/level/block/SupportType;": "Lnet/minecraft/world/level/block/SupportType;values()[Lnet/minecraft/world/level/block/SupportType;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/cache_model_materials/BlockModelMixin": {
+      "<init>": "Lnet/minecraft/client/renderer/block/model/BlockModel;<init>(Lnet/minecraft/resources/ResourceLocation;Ljava/util/List;Ljava/util/Map;ZLnet/minecraft/client/renderer/block/model/BlockModel$GuiLight;Lnet/minecraft/client/renderer/block/model/ItemTransforms;Ljava/util/List;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/cache_model_materials/MultipartMixin": {
+      "getDependencies": "Lnet/minecraft/client/renderer/block/model/multipart/MultiPart;m_7970_()Ljava/util/Collection;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/cache_model_materials/VanillaModelMixin": {
+      "getMaterials": "Lnet/minecraft/client/renderer/block/model/BlockModel;m_5500_(Ljava/util/function/Function;Ljava/util/Set;)Ljava/util/Collection;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/cache_strongholds/ChunkGeneratorMixin": {
+      "generateRingPositions": "Lnet/minecraft/world/level/chunk/ChunkGenerator;m_211667_(Lnet/minecraft/core/Holder;Lnet/minecraft/world/level/levelgen/structure/placement/ConcentricRingsStructurePlacement;)Ljava/util/concurrent/CompletableFuture;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/cache_strongholds/ServerLevelMixin": {
+      "<init>": "Lnet/minecraft/server/level/ServerLevel;<init>(Lnet/minecraft/server/MinecraftServer;Ljava/util/concurrent/Executor;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lnet/minecraft/world/level/storage/ServerLevelData;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/core/Holder;Lnet/minecraft/server/level/progress/ChunkProgressListener;Lnet/minecraft/world/level/chunk/ChunkGenerator;ZJLjava/util/List;Z)V",
+      "Lnet/minecraft/world/level/chunk/ChunkGenerator;ensureStructuresGenerated()V": "Lnet/minecraft/world/level/chunk/ChunkGenerator;m_211700_()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/cache_upgraded_structures/StructureManagerMixin": {
+      "Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureManager;readStructure(Ljava/io/InputStream;)Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate;": "Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureManager;m_74337_(Ljava/io/InputStream;)Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate;",
+      "loadFromResource": "Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureManager;m_163776_(Lnet/minecraft/resources/ResourceLocation;)Ljava/util/Optional;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/compact_bit_storage/PalettedContainerMixin": {
+      "Lnet/minecraft/world/level/chunk/PalettedContainer;data:Lnet/minecraft/world/level/chunk/PalettedContainer$Data;": "Lnet/minecraft/world/level/chunk/PalettedContainer;f_188032_:Lnet/minecraft/world/level/chunk/PalettedContainer$Data;",
+      "read(Lnet/minecraft/network/FriendlyByteBuf;)V": "Lnet/minecraft/world/level/chunk/PalettedContainer;m_63118_(Lnet/minecraft/network/FriendlyByteBuf;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/compact_mojang_registries/MappedRegistryMixin": {
+      "<init>": "Lnet/minecraft/core/MappedRegistry;<init>(Lnet/minecraft/resources/ResourceKey;Lcom/mojang/serialization/Lifecycle;Ljava/util/function/Function;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dedicated_reload_executor/MinecraftMixin": {
+      "<init>": "Lnet/minecraft/client/Minecraft;<init>(Lnet/minecraft/client/main/GameConfig;)V",
+      "Lnet/minecraft/Util;backgroundExecutor()Ljava/util/concurrent/ExecutorService;": "Lnet/minecraft/Util;m_183991_()Ljava/util/concurrent/ExecutorService;",
+      "makeWorldStem(Lnet/minecraft/server/packs/repository/PackRepository;ZLnet/minecraft/server/WorldStem$DataPackConfigSupplier;Lnet/minecraft/server/WorldStem$WorldDataSupplier;)Lnet/minecraft/server/WorldStem;": "Lnet/minecraft/client/Minecraft;m_205125_(Lnet/minecraft/server/packs/repository/PackRepository;ZLnet/minecraft/server/WorldStem$DataPackConfigSupplier;Lnet/minecraft/server/WorldStem$WorldDataSupplier;)Lnet/minecraft/server/WorldStem;",
+      "reloadResourcePacks(Z)Ljava/util/concurrent/CompletableFuture;": "Lnet/minecraft/client/Minecraft;m_168019_(Z)Ljava/util/concurrent/CompletableFuture;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dedicated_reload_executor/MinecraftServerMixin": {
+      "Lnet/minecraft/server/ReloadableServerResources;loadResources(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/core/RegistryAccess$Frozen;Lnet/minecraft/commands/Commands$CommandSelection;ILjava/util/concurrent/Executor;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;": "Lnet/minecraft/server/ReloadableServerResources;m_206861_(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/core/RegistryAccess$Frozen;Lnet/minecraft/commands/Commands$CommandSelection;ILjava/util/concurrent/Executor;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/deduplicate_climate_parameters/ParameterMixin": {
+      "net/minecraft/world/level/biome/Climate$Parameter": "net/minecraft/world/level/biome/Climate$Parameter"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/deduplicate_location/MixinResourceLocation": {
+      "<init>([Ljava/lang/String;)V": "Lnet/minecraft/resources/ResourceLocation;<init>([Ljava/lang/String;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/deduplicate_wall_shapes/WallBlockMixin": {
+      "makeShapes": "Lnet/minecraft/world/level/block/WallBlock;m_57965_(FFFFFF)Ljava/util/Map;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_dfu/BlockEntityTypeMixin": {
+      "Lnet/minecraft/Util;fetchChoiceType(Lcom/mojang/datafixers/DSL$TypeReference;Ljava/lang/String;)Lcom/mojang/datafixers/types/Type;": "Lnet/minecraft/Util;m_137456_(Lcom/mojang/datafixers/DSL$TypeReference;Ljava/lang/String;)Lcom/mojang/datafixers/types/Type;",
+      "register": "Lnet/minecraft/world/level/block/entity/BlockEntityType;m_58956_(Ljava/lang/String;Lnet/minecraft/world/level/block/entity/BlockEntityType$Builder;)Lnet/minecraft/world/level/block/entity/BlockEntityType;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_dfu/DataFixersMixin": {
+      "createFixerUpper": "Lnet/minecraft/util/datafix/DataFixers;m_14529_()Lcom/mojang/datafixers/DataFixer;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_dfu/EntityTypeBuilderMixin": {
+      "Lnet/minecraft/Util;fetchChoiceType(Lcom/mojang/datafixers/DSL$TypeReference;Ljava/lang/String;)Lcom/mojang/datafixers/types/Type;": "Lnet/minecraft/Util;m_137456_(Lcom/mojang/datafixers/DSL$TypeReference;Ljava/lang/String;)Lcom/mojang/datafixers/types/Type;",
+      "build": "Lnet/minecraft/world/entity/EntityType$Builder;m_20712_(Ljava/lang/String;)Lnet/minecraft/world/entity/EntityType;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_entity_renderers/EntityRenderDispatcherMixin": {
+      "Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;renderers:Ljava/util/Map;": "Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;f_114362_:Ljava/util/Map;",
+      "getRenderer": "Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;m_114382_(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/client/renderer/entity/EntityRenderer;",
+      "onResourceManagerReload": "Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;m_6213_(Lnet/minecraft/server/packs/resources/ResourceManager;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_entity_renderers/EntityRenderersMixin": {
+      "createEntityRenderers": "Lnet/minecraft/client/renderer/entity/EntityRenderers;m_174049_(Lnet/minecraft/client/renderer/entity/EntityRendererProvider$Context;)Ljava/util/Map;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/BlockElementFaceDeserializerMixin": {
+      "deserialize(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Lnet/minecraft/client/renderer/block/model/BlockElementFace;": "Lnet/minecraft/client/renderer/block/model/BlockElementFace$Deserializer;deserialize(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Lnet/minecraft/client/renderer/block/model/BlockElementFace;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/BlockModelShaperMixin": {
+      "<init>": "Lnet/minecraft/client/renderer/block/BlockModelShaper;<init>(Lnet/minecraft/client/resources/model/ModelManager;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ItemModelShaperMixin": {
+      "<init>": "Lnet/minecraft/client/renderer/ItemModelShaper;<init>(Lnet/minecraft/client/resources/model/ModelManager;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ItemRendererMixin": {
+      "<init>": "Lnet/minecraft/client/renderer/entity/ItemRenderer;<init>(Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/client/resources/model/ModelManager;Lnet/minecraft/client/color/item/ItemColors;Lnet/minecraft/client/renderer/BlockEntityWithoutLevelRenderer;)V",
+      "Lnet/minecraft/client/renderer/ItemModelShaper;register(Lnet/minecraft/world/item/Item;Lnet/minecraft/client/resources/model/ModelResourceLocation;)V": "Lnet/minecraft/client/renderer/ItemModelShaper;m_109396_(Lnet/minecraft/world/item/Item;Lnet/minecraft/client/resources/model/ModelResourceLocation;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ModelManagerMixin": {
+      "<init>": "Lnet/minecraft/client/resources/model/ModelManager;<init>(Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/client/color/block/BlockColors;I)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/dynamic_structure_manager/StructureManagerMixin": {
+      "<init>": "Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureManager;<init>(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lcom/mojang/datafixers/DataFixer;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/faster_font_loading/LegacyUnicodeBitmapsProviderMixin": {
+      "<init>": "Lnet/minecraft/client/gui/font/providers/LegacyUnicodeBitmapsProvider;<init>(Lnet/minecraft/server/packs/resources/ResourceManager;[BLjava/lang/String;)V",
+      "Lcom/mojang/blaze3d/platform/NativeImage;close()V": "Lcom/mojang/blaze3d/platform/NativeImage;close()V",
+      "Lcom/mojang/blaze3d/platform/NativeImage;read(Lcom/mojang/blaze3d/platform/NativeImage$Format;Ljava/io/InputStream;)Lcom/mojang/blaze3d/platform/NativeImage;": "Lcom/mojang/blaze3d/platform/NativeImage;m_85048_(Lcom/mojang/blaze3d/platform/NativeImage$Format;Ljava/io/InputStream;)Lcom/mojang/blaze3d/platform/NativeImage;",
+      "Lnet/minecraft/client/gui/font/providers/LegacyUnicodeBitmapsProvider;getSheetLocation(I)Lnet/minecraft/resources/ResourceLocation;": "Lnet/minecraft/client/gui/font/providers/LegacyUnicodeBitmapsProvider;m_95442_(I)Lnet/minecraft/resources/ResourceLocation;",
+      "getSheetLocation": "Lnet/minecraft/client/gui/font/providers/LegacyUnicodeBitmapsProvider;m_95442_(I)Lnet/minecraft/resources/ResourceLocation;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/faster_item_rendering/GameRendererMixin": {
+      "Lnet/minecraft/client/renderer/GameRenderer;renderLevel(FJLcom/mojang/blaze3d/vertex/PoseStack;)V": "Lnet/minecraft/client/renderer/GameRenderer;m_109089_(FJLcom/mojang/blaze3d/vertex/PoseStack;)V",
+      "render": "Lnet/minecraft/client/renderer/GameRenderer;m_109093_(FJZ)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/faster_item_rendering/ItemRendererMixin": {
+      "Lnet/minecraft/client/renderer/entity/ItemRenderer;renderModelLists(Lnet/minecraft/client/resources/model/BakedModel;Lnet/minecraft/world/item/ItemStack;IILcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;)V": "Lnet/minecraft/client/renderer/entity/ItemRenderer;m_115189_(Lnet/minecraft/client/resources/model/BakedModel;Lnet/minecraft/world/item/ItemStack;IILcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;)V",
+      "render": "Lnet/minecraft/client/renderer/entity/ItemRenderer;m_115143_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/client/renderer/block/model/ItemTransforms$TransformType;ZLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/client/resources/model/BakedModel;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/faster_texture_loading/TextureAtlasMixin": {
+      "Lnet/minecraft/client/renderer/texture/TextureAtlas;getResourceLocation(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceLocation;": "Lnet/minecraft/client/renderer/texture/TextureAtlas;m_118324_(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceLocation;",
+      "getBasicSpriteInfos": "Lnet/minecraft/client/renderer/texture/TextureAtlas;m_118304_(Lnet/minecraft/server/packs/resources/ResourceManager;Ljava/util/Set;)Ljava/util/Collection;",
+      "load(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite$Info;IIIII)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;": "Lnet/minecraft/client/renderer/texture/TextureAtlas;m_118287_(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite$Info;IIIII)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;",
+      "prepareToStitch": "Lnet/minecraft/client/renderer/texture/TextureAtlas;m_118307_(Lnet/minecraft/server/packs/resources/ResourceManager;Ljava/util/stream/Stream;Lnet/minecraft/util/profiling/ProfilerFiller;I)Lnet/minecraft/client/renderer/texture/TextureAtlas$Preparations;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/faster_texture_stitching/StitcherMixin": {
+      "gatherSprites": "Lnet/minecraft/client/renderer/texture/Stitcher;m_118180_(Lnet/minecraft/client/renderer/texture/Stitcher$SpriteLoader;)V",
+      "stitch": "Lnet/minecraft/client/renderer/texture/Stitcher;m_118193_()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/model_optimizations/PropertyMixin": {
+      "<init>": "Lnet/minecraft/world/level/block/state/properties/Property;<init>(Ljava/lang/String;Ljava/lang/Class;)V",
+      "Lnet/minecraft/world/level/block/state/properties/Property;name:Ljava/lang/String;": "Lnet/minecraft/world/level/block/state/properties/Property;f_61687_:Ljava/lang/String;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/model_optimizations/SelectorMixin": {
+      "getPredicate": "Lnet/minecraft/client/renderer/block/model/multipart/Selector;m_112021_(Lnet/minecraft/world/level/block/state/StateDefinition;)Ljava/util/function/Predicate;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/mojang_registry_size/MappedRegistryMixin": {
+      "registerMapping(ILnet/minecraft/resources/ResourceKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;Z)Lnet/minecraft/core/Holder;": "Lnet/minecraft/core/MappedRegistry;m_205857_(ILnet/minecraft/resources/ResourceKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;Z)Lnet/minecraft/core/Holder;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/mojang_registry_size/ResourceKeyMixin": {
+      "create(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceKey;": "Lnet/minecraft/resources/ResourceKey;m_135790_(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceKey;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/mojang_registry_size/StateHolderMixin": {
+      "populateNeighbours": "Lnet/minecraft/world/level/block/state/StateHolder;m_61133_(Ljava/util/Map;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/nbt_memory_usage/CompoundTag1Mixin": {
+      "load(Ljava/io/DataInput;ILnet/minecraft/nbt/NbtAccounter;)Lnet/minecraft/nbt/CompoundTag;": "Lnet/minecraft/nbt/CompoundTag$1;m_7300_(Ljava/io/DataInput;ILnet/minecraft/nbt/NbtAccounter;)Lnet/minecraft/nbt/CompoundTag;",
+      "net/minecraft/nbt/CompoundTag$1": "net/minecraft/nbt/CompoundTag$1"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/nbt_memory_usage/CompoundTagMixin": {
+      "<init>()V": "Lnet/minecraft/nbt/CompoundTag;<init>()V",
+      "Lnet/minecraft/nbt/CompoundTag;<init>(Ljava/util/Map;)V": "Lnet/minecraft/nbt/CompoundTag;<init>(Ljava/util/Map;)V",
+      "copy()Lnet/minecraft/nbt/CompoundTag;": "Lnet/minecraft/nbt/CompoundTag;m_6426_()Lnet/minecraft/nbt/CompoundTag;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/reduce_blockstate_cache_rebuilds/BlockStateBaseMixin": {
+      "Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase;cache:Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase$Cache;": "Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase;f_60593_:Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase$Cache;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/reduce_blockstate_cache_rebuilds/BlocksMixin": {
+      "Lnet/minecraft/core/IdMapper;forEach(Ljava/util/function/Consumer;)V": "Lnet/minecraft/core/IdMapper;forEach(Ljava/util/function/Consumer;)V",
+      "rebuildCache": "Lnet/minecraft/world/level/block/Blocks;m_50758_()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/remove_spawn_chunks/EntityMixin": {
+      "Lnet/minecraft/server/level/ServerLevel;getSharedSpawnPos()Lnet/minecraft/core/BlockPos;": "Lnet/minecraft/server/level/ServerLevel;m_8900_()Lnet/minecraft/core/BlockPos;",
+      "findDimensionEntryPoint": "Lnet/minecraft/world/entity/Entity;m_7937_(Lnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/world/level/portal/PortalInfo;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/remove_spawn_chunks/MinecraftServerMixin": {
+      "Lnet/minecraft/server/level/ServerChunkCache;addRegionTicket(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V": "Lnet/minecraft/server/level/ServerChunkCache;m_8387_(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V",
+      "Lnet/minecraft/server/level/ServerChunkCache;getTickingGenerated()I": "Lnet/minecraft/server/level/ServerChunkCache;m_8427_()I",
+      "prepareLevels": "Lnet/minecraft/server/MinecraftServer;m_129940_(Lnet/minecraft/server/level/progress/ChunkProgressListener;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/remove_spawn_chunks/ServerChunkCacheAccessor": {
+      "distanceManager": "f_8327_:Lnet/minecraft/server/level/DistanceManager;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/remove_spawn_chunks/ServerLevelMixin": {
+      "Lnet/minecraft/server/level/ServerChunkCache;addRegionTicket(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V": "Lnet/minecraft/server/level/ServerChunkCache;m_8387_(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V",
+      "Lnet/minecraft/server/level/ServerChunkCache;removeRegionTicket(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V": "Lnet/minecraft/server/level/ServerChunkCache;m_8438_(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V",
+      "setDefaultSpawnPos": "Lnet/minecraft/server/level/ServerLevel;m_8733_(Lnet/minecraft/core/BlockPos;F)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/remove_spawn_chunks/SortedArraySetMixin": {
+      "Lnet/minecraft/util/SortedArraySet;findIndex(Ljava/lang/Object;)I": "Lnet/minecraft/util/SortedArraySet;m_14269_(Ljava/lang/Object;)I",
+      "add": "Lnet/minecraft/util/SortedArraySet;add(Ljava/lang/Object;)Z"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/resourcepacks/ReloadableResourceManagerMixin": {
+      "createReload": "Lnet/minecraft/server/packs/resources/ReloadableResourceManager;m_142463_(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/CompletableFuture;Ljava/util/List;)Lnet/minecraft/server/packs/resources/ReloadInstance;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/state_definition_construct/StateDefinitionMixin": {
+      "<init>": "Lnet/minecraft/world/level/block/state/StateDefinition;<init>(Ljava/util/function/Function;Ljava/lang/Object;Lnet/minecraft/world/level/block/state/StateDefinition$Factory;Ljava/util/Map;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/thread_priorities/IntegratedServerMixin": {
+      "<init>": "Lnet/minecraft/client/server/IntegratedServer;<init>(Ljava/lang/Thread;Lnet/minecraft/client/Minecraft;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lnet/minecraft/server/packs/repository/PackRepository;Lnet/minecraft/server/WorldStem;Lcom/mojang/authlib/minecraft/MinecraftSessionService;Lcom/mojang/authlib/GameProfileRepository;Lnet/minecraft/server/players/GameProfileCache;Lnet/minecraft/server/level/progress/ChunkProgressListenerFactory;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/thread_priorities/UtilMixin": {
+      "makeExecutor": "Lnet/minecraft/Util;m_137477_(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;"
+    },
+    "org/embeddedt/modernfix/common/mixin/perf/ticking_chunk_alloc/BatMixin": {
+      "isHalloween": "Lnet/minecraft/world/entity/ambient/Bat;m_27453_()Z"
+    },
+    "org/embeddedt/modernfix/common/mixin/safety/BlockColorsMixin": {
+      "register": "Lnet/minecraft/client/color/block/BlockColors;m_92589_(Lnet/minecraft/client/color/block/BlockColor;[Lnet/minecraft/world/level/block/Block;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/safety/ItemColorsMixin": {
+      "register": "Lnet/minecraft/client/color/item/ItemColors;m_92689_(Lnet/minecraft/client/color/item/ItemColor;[Lnet/minecraft/world/level/ItemLike;)V"
+    },
+    "org/embeddedt/modernfix/common/mixin/safety/ItemPropertiesMixin": {
+      "<clinit>": "Lnet/minecraft/client/renderer/item/ItemProperties;<clinit>()V"
+    },
+    "org/embeddedt/modernfix/common/mixin/safety/LivingEntityRendererMixin": {
+      "<init>": "Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;<init>(Lnet/minecraft/client/renderer/entity/EntityRendererProvider$Context;Lnet/minecraft/client/model/EntityModel;F)V"
+    }
+  },
+  "data": {
+    "searge": {
+      "org/embeddedt/modernfix/common/mixin/bugfix/buffer_builder_leak/BufferBuilderMixin": {
+        "<clinit>": "Lcom/mojang/blaze3d/vertex/BufferBuilder;<clinit>()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/bugfix/chunk_deadlock/BlockStateBaseMixin": {
+        "getOffset": "Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase;m_60824_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/phys/Vec3;"
+      },
+      "org/embeddedt/modernfix/common/mixin/bugfix/ender_dragon_leak/EnderDragonRendererMixin": {
+        "render(Lnet/minecraft/world/entity/boss/enderdragon/EnderDragon;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V": "Lnet/minecraft/client/renderer/entity/EnderDragonRenderer;m_7392_(Lnet/minecraft/world/entity/boss/enderdragon/EnderDragon;FFLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/bugfix/item_cache_flag/ItemStackMixin": {
+        "Lnet/minecraft/world/item/ItemStack;emptyCacheFlag:Z": "Lnet/minecraft/world/item/ItemStack;f_41591_:Z",
+        "Lnet/minecraft/world/item/ItemStack;getItem()Lnet/minecraft/world/item/Item;": "Lnet/minecraft/world/item/ItemStack;m_41720_()Lnet/minecraft/world/item/Item;",
+        "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z": "Lnet/minecraft/world/item/ItemStack;m_150930_(Lnet/minecraft/world/item/Item;)Z",
+        "isEmpty": "Lnet/minecraft/world/item/ItemStack;m_41619_()Z"
+      },
+      "org/embeddedt/modernfix/common/mixin/bugfix/paper_chunk_patches/ChunkMapMixin": {
+        "prepareAccessibleChunk": "Lnet/minecraft/server/level/ChunkMap;m_143109_(Lnet/minecraft/server/level/ChunkHolder;)Ljava/util/concurrent/CompletableFuture;",
+        "schedule": "Lnet/minecraft/server/level/ChunkMap;m_140292_(Lnet/minecraft/server/level/ChunkHolder;Lnet/minecraft/world/level/chunk/ChunkStatus;)Ljava/util/concurrent/CompletableFuture;"
+      },
+      "org/embeddedt/modernfix/common/mixin/bugfix/restore_old_dragon_movement/EnderDragonMixin": {
+        "Lnet/minecraft/world/entity/boss/enderdragon/phases/DragonPhaseInstance;getFlyTargetLocation()Lnet/minecraft/world/phys/Vec3;": "Lnet/minecraft/world/entity/boss/enderdragon/phases/DragonPhaseInstance;m_5535_()Lnet/minecraft/world/phys/Vec3;",
+        "Lnet/minecraft/world/phys/Vec3;add(DDD)Lnet/minecraft/world/phys/Vec3;": "Lnet/minecraft/world/phys/Vec3;m_82520_(DDD)Lnet/minecraft/world/phys/Vec3;",
+        "aiStep": "Lnet/minecraft/world/entity/boss/enderdragon/EnderDragon;m_8107_()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/bugfix/world_leaks/MinecraftMixin": {
+        "Lnet/minecraft/client/Minecraft;level:Lnet/minecraft/client/multiplayer/ClientLevel;": "Lnet/minecraft/client/Minecraft;f_91073_:Lnet/minecraft/client/multiplayer/ClientLevel;",
+        "clearLevel(Lnet/minecraft/client/gui/screens/Screen;)V": "Lnet/minecraft/client/Minecraft;m_91320_(Lnet/minecraft/client/gui/screens/Screen;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/core/MinecraftServerMixin": {
+        "Lnet/minecraft/server/MinecraftServer;tickServer(Ljava/util/function/BooleanSupplier;)V": "Lnet/minecraft/server/MinecraftServer;m_5705_(Ljava/util/function/BooleanSupplier;)V",
+        "runServer": "Lnet/minecraft/server/MinecraftServer;m_130011_()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/core/SynchedEntityDataMixin": {
+        "<init>": "Lnet/minecraft/network/syncher/SynchedEntityData;<init>(Lnet/minecraft/world/entity/Entity;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/devenv/NarratorMixin": {
+        "<init>": "Lnet/minecraft/client/gui/chat/NarratorChatListener;<init>()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/feature/direct_stack_trace/CrashReportMixin": {
+        "addCategory(Ljava/lang/String;I)Lnet/minecraft/CrashReportCategory;": "Lnet/minecraft/CrashReport;m_127516_(Ljava/lang/String;I)Lnet/minecraft/CrashReportCategory;"
+      },
+      "org/embeddedt/modernfix/common/mixin/feature/measure_time/BootstrapMixin": {
+        "Lnet/minecraft/server/Bootstrap;isBootstrapped:Z": "Lnet/minecraft/server/Bootstrap;f_135867_:Z",
+        "bootStrap": "Lnet/minecraft/server/Bootstrap;m_135870_()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/feature/measure_time/ConnectScreenMixin": {
+        "connect": "Lnet/minecraft/client/gui/screens/ConnectScreen;m_169264_(Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/multiplayer/resolver/ServerAddress;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/feature/measure_time/MinecraftMixin": {
+        "makeWorldStem(Lnet/minecraft/server/packs/repository/PackRepository;ZLnet/minecraft/server/WorldStem$DataPackConfigSupplier;Lnet/minecraft/server/WorldStem$WorldDataSupplier;)Lnet/minecraft/server/WorldStem;": "Lnet/minecraft/client/Minecraft;m_205125_(Lnet/minecraft/server/packs/repository/PackRepository;ZLnet/minecraft/server/WorldStem$DataPackConfigSupplier;Lnet/minecraft/server/WorldStem$WorldDataSupplier;)Lnet/minecraft/server/WorldStem;",
+        "tick": "Lnet/minecraft/client/Minecraft;m_91398_()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/feature/measure_time/ProfiledReloadInstanceMixin": {
+        "<init>": "Lnet/minecraft/server/packs/resources/ProfiledReloadInstance;<init>(Lnet/minecraft/server/packs/resources/ResourceManager;Ljava/util/List;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/CompletableFuture;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/feature/measure_time/SimpleReloadableResourceManagerMixin": {
+        "Lnet/minecraft/server/packs/resources/SimpleReloadInstance;create(Lnet/minecraft/server/packs/resources/ResourceManager;Ljava/util/List;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/CompletableFuture;Z)Lnet/minecraft/server/packs/resources/ReloadInstance;": "Lnet/minecraft/server/packs/resources/SimpleReloadInstance;m_203834_(Lnet/minecraft/server/packs/resources/ResourceManager;Ljava/util/List;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/CompletableFuture;Z)Lnet/minecraft/server/packs/resources/ReloadInstance;",
+        "createReload": "Lnet/minecraft/server/packs/resources/ReloadableResourceManager;m_142463_(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/CompletableFuture;Ljava/util/List;)Lnet/minecraft/server/packs/resources/ReloadInstance;"
+      },
+      "org/embeddedt/modernfix/common/mixin/feature/stalled_chunk_load_detection/ServerChunkCacheMixin": {
+        "getChunk": "Lnet/minecraft/server/level/ServerChunkCache;m_7587_(IILnet/minecraft/world/level/chunk/ChunkStatus;Z)Lnet/minecraft/world/level/chunk/ChunkAccess;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/blast_search_trees/MinecraftMixin": {
+        "createSearchTrees": "Lnet/minecraft/client/Minecraft;m_91271_()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/cache_blockstate_cache_arrays/AbstractBlockStateCacheMixin": {
+        "<init>(Lnet/minecraft/world/level/block/state/BlockState;)V": "Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase$Cache;<init>(Lnet/minecraft/world/level/block/state/BlockState;)V",
+        "Lnet/minecraft/core/Direction$Axis;values()[Lnet/minecraft/core/Direction$Axis;": "Lnet/minecraft/core/Direction$Axis;values()[Lnet/minecraft/core/Direction$Axis;",
+        "Lnet/minecraft/world/level/block/SupportType;values()[Lnet/minecraft/world/level/block/SupportType;": "Lnet/minecraft/world/level/block/SupportType;values()[Lnet/minecraft/world/level/block/SupportType;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/cache_model_materials/BlockModelMixin": {
+        "<init>": "Lnet/minecraft/client/renderer/block/model/BlockModel;<init>(Lnet/minecraft/resources/ResourceLocation;Ljava/util/List;Ljava/util/Map;ZLnet/minecraft/client/renderer/block/model/BlockModel$GuiLight;Lnet/minecraft/client/renderer/block/model/ItemTransforms;Ljava/util/List;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/cache_model_materials/MultipartMixin": {
+        "getDependencies": "Lnet/minecraft/client/renderer/block/model/multipart/MultiPart;m_7970_()Ljava/util/Collection;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/cache_model_materials/VanillaModelMixin": {
+        "getMaterials": "Lnet/minecraft/client/renderer/block/model/BlockModel;m_5500_(Ljava/util/function/Function;Ljava/util/Set;)Ljava/util/Collection;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/cache_strongholds/ChunkGeneratorMixin": {
+        "generateRingPositions": "Lnet/minecraft/world/level/chunk/ChunkGenerator;m_211667_(Lnet/minecraft/core/Holder;Lnet/minecraft/world/level/levelgen/structure/placement/ConcentricRingsStructurePlacement;)Ljava/util/concurrent/CompletableFuture;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/cache_strongholds/ServerLevelMixin": {
+        "<init>": "Lnet/minecraft/server/level/ServerLevel;<init>(Lnet/minecraft/server/MinecraftServer;Ljava/util/concurrent/Executor;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lnet/minecraft/world/level/storage/ServerLevelData;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/core/Holder;Lnet/minecraft/server/level/progress/ChunkProgressListener;Lnet/minecraft/world/level/chunk/ChunkGenerator;ZJLjava/util/List;Z)V",
+        "Lnet/minecraft/world/level/chunk/ChunkGenerator;ensureStructuresGenerated()V": "Lnet/minecraft/world/level/chunk/ChunkGenerator;m_211700_()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/cache_upgraded_structures/StructureManagerMixin": {
+        "Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureManager;readStructure(Ljava/io/InputStream;)Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate;": "Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureManager;m_74337_(Ljava/io/InputStream;)Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate;",
+        "loadFromResource": "Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureManager;m_163776_(Lnet/minecraft/resources/ResourceLocation;)Ljava/util/Optional;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/compact_bit_storage/PalettedContainerMixin": {
+        "Lnet/minecraft/world/level/chunk/PalettedContainer;data:Lnet/minecraft/world/level/chunk/PalettedContainer$Data;": "Lnet/minecraft/world/level/chunk/PalettedContainer;f_188032_:Lnet/minecraft/world/level/chunk/PalettedContainer$Data;",
+        "read(Lnet/minecraft/network/FriendlyByteBuf;)V": "Lnet/minecraft/world/level/chunk/PalettedContainer;m_63118_(Lnet/minecraft/network/FriendlyByteBuf;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/compact_mojang_registries/MappedRegistryMixin": {
+        "<init>": "Lnet/minecraft/core/MappedRegistry;<init>(Lnet/minecraft/resources/ResourceKey;Lcom/mojang/serialization/Lifecycle;Ljava/util/function/Function;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dedicated_reload_executor/MinecraftMixin": {
+        "<init>": "Lnet/minecraft/client/Minecraft;<init>(Lnet/minecraft/client/main/GameConfig;)V",
+        "Lnet/minecraft/Util;backgroundExecutor()Ljava/util/concurrent/ExecutorService;": "Lnet/minecraft/Util;m_183991_()Ljava/util/concurrent/ExecutorService;",
+        "makeWorldStem(Lnet/minecraft/server/packs/repository/PackRepository;ZLnet/minecraft/server/WorldStem$DataPackConfigSupplier;Lnet/minecraft/server/WorldStem$WorldDataSupplier;)Lnet/minecraft/server/WorldStem;": "Lnet/minecraft/client/Minecraft;m_205125_(Lnet/minecraft/server/packs/repository/PackRepository;ZLnet/minecraft/server/WorldStem$DataPackConfigSupplier;Lnet/minecraft/server/WorldStem$WorldDataSupplier;)Lnet/minecraft/server/WorldStem;",
+        "reloadResourcePacks(Z)Ljava/util/concurrent/CompletableFuture;": "Lnet/minecraft/client/Minecraft;m_168019_(Z)Ljava/util/concurrent/CompletableFuture;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dedicated_reload_executor/MinecraftServerMixin": {
+        "Lnet/minecraft/server/ReloadableServerResources;loadResources(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/core/RegistryAccess$Frozen;Lnet/minecraft/commands/Commands$CommandSelection;ILjava/util/concurrent/Executor;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;": "Lnet/minecraft/server/ReloadableServerResources;m_206861_(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/core/RegistryAccess$Frozen;Lnet/minecraft/commands/Commands$CommandSelection;ILjava/util/concurrent/Executor;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/deduplicate_climate_parameters/ParameterMixin": {
+        "net/minecraft/world/level/biome/Climate$Parameter": "net/minecraft/world/level/biome/Climate$Parameter"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/deduplicate_location/MixinResourceLocation": {
+        "<init>([Ljava/lang/String;)V": "Lnet/minecraft/resources/ResourceLocation;<init>([Ljava/lang/String;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/deduplicate_wall_shapes/WallBlockMixin": {
+        "makeShapes": "Lnet/minecraft/world/level/block/WallBlock;m_57965_(FFFFFF)Ljava/util/Map;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_dfu/BlockEntityTypeMixin": {
+        "Lnet/minecraft/Util;fetchChoiceType(Lcom/mojang/datafixers/DSL$TypeReference;Ljava/lang/String;)Lcom/mojang/datafixers/types/Type;": "Lnet/minecraft/Util;m_137456_(Lcom/mojang/datafixers/DSL$TypeReference;Ljava/lang/String;)Lcom/mojang/datafixers/types/Type;",
+        "register": "Lnet/minecraft/world/level/block/entity/BlockEntityType;m_58956_(Ljava/lang/String;Lnet/minecraft/world/level/block/entity/BlockEntityType$Builder;)Lnet/minecraft/world/level/block/entity/BlockEntityType;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_dfu/DataFixersMixin": {
+        "createFixerUpper": "Lnet/minecraft/util/datafix/DataFixers;m_14529_()Lcom/mojang/datafixers/DataFixer;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_dfu/EntityTypeBuilderMixin": {
+        "Lnet/minecraft/Util;fetchChoiceType(Lcom/mojang/datafixers/DSL$TypeReference;Ljava/lang/String;)Lcom/mojang/datafixers/types/Type;": "Lnet/minecraft/Util;m_137456_(Lcom/mojang/datafixers/DSL$TypeReference;Ljava/lang/String;)Lcom/mojang/datafixers/types/Type;",
+        "build": "Lnet/minecraft/world/entity/EntityType$Builder;m_20712_(Ljava/lang/String;)Lnet/minecraft/world/entity/EntityType;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_entity_renderers/EntityRenderDispatcherMixin": {
+        "Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;renderers:Ljava/util/Map;": "Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;f_114362_:Ljava/util/Map;",
+        "getRenderer": "Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;m_114382_(Lnet/minecraft/world/entity/Entity;)Lnet/minecraft/client/renderer/entity/EntityRenderer;",
+        "onResourceManagerReload": "Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;m_6213_(Lnet/minecraft/server/packs/resources/ResourceManager;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_entity_renderers/EntityRenderersMixin": {
+        "createEntityRenderers": "Lnet/minecraft/client/renderer/entity/EntityRenderers;m_174049_(Lnet/minecraft/client/renderer/entity/EntityRendererProvider$Context;)Ljava/util/Map;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/BlockElementFaceDeserializerMixin": {
+        "deserialize(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Lnet/minecraft/client/renderer/block/model/BlockElementFace;": "Lnet/minecraft/client/renderer/block/model/BlockElementFace$Deserializer;deserialize(Lcom/google/gson/JsonElement;Ljava/lang/reflect/Type;Lcom/google/gson/JsonDeserializationContext;)Lnet/minecraft/client/renderer/block/model/BlockElementFace;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/BlockModelShaperMixin": {
+        "<init>": "Lnet/minecraft/client/renderer/block/BlockModelShaper;<init>(Lnet/minecraft/client/resources/model/ModelManager;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ItemModelShaperMixin": {
+        "<init>": "Lnet/minecraft/client/renderer/ItemModelShaper;<init>(Lnet/minecraft/client/resources/model/ModelManager;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ItemRendererMixin": {
+        "<init>": "Lnet/minecraft/client/renderer/entity/ItemRenderer;<init>(Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/client/resources/model/ModelManager;Lnet/minecraft/client/color/item/ItemColors;Lnet/minecraft/client/renderer/BlockEntityWithoutLevelRenderer;)V",
+        "Lnet/minecraft/client/renderer/ItemModelShaper;register(Lnet/minecraft/world/item/Item;Lnet/minecraft/client/resources/model/ModelResourceLocation;)V": "Lnet/minecraft/client/renderer/ItemModelShaper;m_109396_(Lnet/minecraft/world/item/Item;Lnet/minecraft/client/resources/model/ModelResourceLocation;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_resources/ModelManagerMixin": {
+        "<init>": "Lnet/minecraft/client/resources/model/ModelManager;<init>(Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/client/color/block/BlockColors;I)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/dynamic_structure_manager/StructureManagerMixin": {
+        "<init>": "Lnet/minecraft/world/level/levelgen/structure/templatesystem/StructureManager;<init>(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lcom/mojang/datafixers/DataFixer;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/faster_font_loading/LegacyUnicodeBitmapsProviderMixin": {
+        "<init>": "Lnet/minecraft/client/gui/font/providers/LegacyUnicodeBitmapsProvider;<init>(Lnet/minecraft/server/packs/resources/ResourceManager;[BLjava/lang/String;)V",
+        "Lcom/mojang/blaze3d/platform/NativeImage;close()V": "Lcom/mojang/blaze3d/platform/NativeImage;close()V",
+        "Lcom/mojang/blaze3d/platform/NativeImage;read(Lcom/mojang/blaze3d/platform/NativeImage$Format;Ljava/io/InputStream;)Lcom/mojang/blaze3d/platform/NativeImage;": "Lcom/mojang/blaze3d/platform/NativeImage;m_85048_(Lcom/mojang/blaze3d/platform/NativeImage$Format;Ljava/io/InputStream;)Lcom/mojang/blaze3d/platform/NativeImage;",
+        "Lnet/minecraft/client/gui/font/providers/LegacyUnicodeBitmapsProvider;getSheetLocation(I)Lnet/minecraft/resources/ResourceLocation;": "Lnet/minecraft/client/gui/font/providers/LegacyUnicodeBitmapsProvider;m_95442_(I)Lnet/minecraft/resources/ResourceLocation;",
+        "getSheetLocation": "Lnet/minecraft/client/gui/font/providers/LegacyUnicodeBitmapsProvider;m_95442_(I)Lnet/minecraft/resources/ResourceLocation;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/faster_item_rendering/GameRendererMixin": {
+        "Lnet/minecraft/client/renderer/GameRenderer;renderLevel(FJLcom/mojang/blaze3d/vertex/PoseStack;)V": "Lnet/minecraft/client/renderer/GameRenderer;m_109089_(FJLcom/mojang/blaze3d/vertex/PoseStack;)V",
+        "render": "Lnet/minecraft/client/renderer/GameRenderer;m_109093_(FJZ)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/faster_item_rendering/ItemRendererMixin": {
+        "Lnet/minecraft/client/renderer/entity/ItemRenderer;renderModelLists(Lnet/minecraft/client/resources/model/BakedModel;Lnet/minecraft/world/item/ItemStack;IILcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;)V": "Lnet/minecraft/client/renderer/entity/ItemRenderer;m_115189_(Lnet/minecraft/client/resources/model/BakedModel;Lnet/minecraft/world/item/ItemStack;IILcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;)V",
+        "render": "Lnet/minecraft/client/renderer/entity/ItemRenderer;m_115143_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/client/renderer/block/model/ItemTransforms$TransformType;ZLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/client/resources/model/BakedModel;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/faster_texture_loading/TextureAtlasMixin": {
+        "Lnet/minecraft/client/renderer/texture/TextureAtlas;getResourceLocation(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceLocation;": "Lnet/minecraft/client/renderer/texture/TextureAtlas;m_118324_(Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceLocation;",
+        "getBasicSpriteInfos": "Lnet/minecraft/client/renderer/texture/TextureAtlas;m_118304_(Lnet/minecraft/server/packs/resources/ResourceManager;Ljava/util/Set;)Ljava/util/Collection;",
+        "load(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite$Info;IIIII)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;": "Lnet/minecraft/client/renderer/texture/TextureAtlas;m_118287_(Lnet/minecraft/server/packs/resources/ResourceManager;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite$Info;IIIII)Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;",
+        "prepareToStitch": "Lnet/minecraft/client/renderer/texture/TextureAtlas;m_118307_(Lnet/minecraft/server/packs/resources/ResourceManager;Ljava/util/stream/Stream;Lnet/minecraft/util/profiling/ProfilerFiller;I)Lnet/minecraft/client/renderer/texture/TextureAtlas$Preparations;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/faster_texture_stitching/StitcherMixin": {
+        "gatherSprites": "Lnet/minecraft/client/renderer/texture/Stitcher;m_118180_(Lnet/minecraft/client/renderer/texture/Stitcher$SpriteLoader;)V",
+        "stitch": "Lnet/minecraft/client/renderer/texture/Stitcher;m_118193_()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/model_optimizations/PropertyMixin": {
+        "<init>": "Lnet/minecraft/world/level/block/state/properties/Property;<init>(Ljava/lang/String;Ljava/lang/Class;)V",
+        "Lnet/minecraft/world/level/block/state/properties/Property;name:Ljava/lang/String;": "Lnet/minecraft/world/level/block/state/properties/Property;f_61687_:Ljava/lang/String;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/model_optimizations/SelectorMixin": {
+        "getPredicate": "Lnet/minecraft/client/renderer/block/model/multipart/Selector;m_112021_(Lnet/minecraft/world/level/block/state/StateDefinition;)Ljava/util/function/Predicate;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/mojang_registry_size/MappedRegistryMixin": {
+        "registerMapping(ILnet/minecraft/resources/ResourceKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;Z)Lnet/minecraft/core/Holder;": "Lnet/minecraft/core/MappedRegistry;m_205857_(ILnet/minecraft/resources/ResourceKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;Z)Lnet/minecraft/core/Holder;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/mojang_registry_size/ResourceKeyMixin": {
+        "create(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceKey;": "Lnet/minecraft/resources/ResourceKey;m_135790_(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/resources/ResourceKey;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/mojang_registry_size/StateHolderMixin": {
+        "populateNeighbours": "Lnet/minecraft/world/level/block/state/StateHolder;m_61133_(Ljava/util/Map;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/nbt_memory_usage/CompoundTag1Mixin": {
+        "load(Ljava/io/DataInput;ILnet/minecraft/nbt/NbtAccounter;)Lnet/minecraft/nbt/CompoundTag;": "Lnet/minecraft/nbt/CompoundTag$1;m_7300_(Ljava/io/DataInput;ILnet/minecraft/nbt/NbtAccounter;)Lnet/minecraft/nbt/CompoundTag;",
+        "net/minecraft/nbt/CompoundTag$1": "net/minecraft/nbt/CompoundTag$1"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/nbt_memory_usage/CompoundTagMixin": {
+        "<init>()V": "Lnet/minecraft/nbt/CompoundTag;<init>()V",
+        "Lnet/minecraft/nbt/CompoundTag;<init>(Ljava/util/Map;)V": "Lnet/minecraft/nbt/CompoundTag;<init>(Ljava/util/Map;)V",
+        "copy()Lnet/minecraft/nbt/CompoundTag;": "Lnet/minecraft/nbt/CompoundTag;m_6426_()Lnet/minecraft/nbt/CompoundTag;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/reduce_blockstate_cache_rebuilds/BlockStateBaseMixin": {
+        "Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase;cache:Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase$Cache;": "Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase;f_60593_:Lnet/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase$Cache;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/reduce_blockstate_cache_rebuilds/BlocksMixin": {
+        "Lnet/minecraft/core/IdMapper;forEach(Ljava/util/function/Consumer;)V": "Lnet/minecraft/core/IdMapper;forEach(Ljava/util/function/Consumer;)V",
+        "rebuildCache": "Lnet/minecraft/world/level/block/Blocks;m_50758_()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/remove_spawn_chunks/EntityMixin": {
+        "Lnet/minecraft/server/level/ServerLevel;getSharedSpawnPos()Lnet/minecraft/core/BlockPos;": "Lnet/minecraft/server/level/ServerLevel;m_8900_()Lnet/minecraft/core/BlockPos;",
+        "findDimensionEntryPoint": "Lnet/minecraft/world/entity/Entity;m_7937_(Lnet/minecraft/server/level/ServerLevel;)Lnet/minecraft/world/level/portal/PortalInfo;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/remove_spawn_chunks/MinecraftServerMixin": {
+        "Lnet/minecraft/server/level/ServerChunkCache;addRegionTicket(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V": "Lnet/minecraft/server/level/ServerChunkCache;m_8387_(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V",
+        "Lnet/minecraft/server/level/ServerChunkCache;getTickingGenerated()I": "Lnet/minecraft/server/level/ServerChunkCache;m_8427_()I",
+        "prepareLevels": "Lnet/minecraft/server/MinecraftServer;m_129940_(Lnet/minecraft/server/level/progress/ChunkProgressListener;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/remove_spawn_chunks/ServerChunkCacheAccessor": {
+        "distanceManager": "f_8327_:Lnet/minecraft/server/level/DistanceManager;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/remove_spawn_chunks/ServerLevelMixin": {
+        "Lnet/minecraft/server/level/ServerChunkCache;addRegionTicket(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V": "Lnet/minecraft/server/level/ServerChunkCache;m_8387_(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V",
+        "Lnet/minecraft/server/level/ServerChunkCache;removeRegionTicket(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V": "Lnet/minecraft/server/level/ServerChunkCache;m_8438_(Lnet/minecraft/server/level/TicketType;Lnet/minecraft/world/level/ChunkPos;ILjava/lang/Object;)V",
+        "setDefaultSpawnPos": "Lnet/minecraft/server/level/ServerLevel;m_8733_(Lnet/minecraft/core/BlockPos;F)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/remove_spawn_chunks/SortedArraySetMixin": {
+        "Lnet/minecraft/util/SortedArraySet;findIndex(Ljava/lang/Object;)I": "Lnet/minecraft/util/SortedArraySet;m_14269_(Ljava/lang/Object;)I",
+        "add": "Lnet/minecraft/util/SortedArraySet;add(Ljava/lang/Object;)Z"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/resourcepacks/ReloadableResourceManagerMixin": {
+        "createReload": "Lnet/minecraft/server/packs/resources/ReloadableResourceManager;m_142463_(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/CompletableFuture;Ljava/util/List;)Lnet/minecraft/server/packs/resources/ReloadInstance;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/state_definition_construct/StateDefinitionMixin": {
+        "<init>": "Lnet/minecraft/world/level/block/state/StateDefinition;<init>(Ljava/util/function/Function;Ljava/lang/Object;Lnet/minecraft/world/level/block/state/StateDefinition$Factory;Ljava/util/Map;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/thread_priorities/IntegratedServerMixin": {
+        "<init>": "Lnet/minecraft/client/server/IntegratedServer;<init>(Ljava/lang/Thread;Lnet/minecraft/client/Minecraft;Lnet/minecraft/world/level/storage/LevelStorageSource$LevelStorageAccess;Lnet/minecraft/server/packs/repository/PackRepository;Lnet/minecraft/server/WorldStem;Lcom/mojang/authlib/minecraft/MinecraftSessionService;Lcom/mojang/authlib/GameProfileRepository;Lnet/minecraft/server/players/GameProfileCache;Lnet/minecraft/server/level/progress/ChunkProgressListenerFactory;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/thread_priorities/UtilMixin": {
+        "makeExecutor": "Lnet/minecraft/Util;m_137477_(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;"
+      },
+      "org/embeddedt/modernfix/common/mixin/perf/ticking_chunk_alloc/BatMixin": {
+        "isHalloween": "Lnet/minecraft/world/entity/ambient/Bat;m_27453_()Z"
+      },
+      "org/embeddedt/modernfix/common/mixin/safety/BlockColorsMixin": {
+        "register": "Lnet/minecraft/client/color/block/BlockColors;m_92589_(Lnet/minecraft/client/color/block/BlockColor;[Lnet/minecraft/world/level/block/Block;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/safety/ItemColorsMixin": {
+        "register": "Lnet/minecraft/client/color/item/ItemColors;m_92689_(Lnet/minecraft/client/color/item/ItemColor;[Lnet/minecraft/world/level/ItemLike;)V"
+      },
+      "org/embeddedt/modernfix/common/mixin/safety/ItemPropertiesMixin": {
+        "<clinit>": "Lnet/minecraft/client/renderer/item/ItemProperties;<clinit>()V"
+      },
+      "org/embeddedt/modernfix/common/mixin/safety/LivingEntityRendererMixin": {
+        "<init>": "Lnet/minecraft/client/renderer/entity/LivingEntityRenderer;<init>(Lnet/minecraft/client/renderer/entity/EntityRendererProvider$Context;Lnet/minecraft/client/model/EntityModel;F)V"
+      }
+    }
+  }
+}
